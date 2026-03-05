@@ -9,7 +9,7 @@ import urllib.request
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-TELEGRAM_CHAT_ID = "@roman_levanov"
+TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "roman_levanov")
 TO_EMAIL = "roman@itspb.com"
 FROM_EMAIL = "roman@itspb.com"
 SMTP_HOST = "smtp.gmail.com"
