@@ -203,17 +203,16 @@ export default function Index() {
       <div className="progress-bar" style={{ width: `${scrollProgress}%` }} />
 
       {/* NAV */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-lg border-b border-gray-200" : "bg-[#0D1B2E]/90 backdrop-blur-xl border-b border-white/10"}`}>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0D1B2E] shadow-xl border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-18" style={{ height: "72px" }}>
-            {/* Logo — одинаковый везде, на белом фоне */}
-            <div className={`flex items-center rounded-xl px-3 py-1.5 ${scrolled ? "bg-gray-50" : "bg-white"}`}>
-              <img src={LOGO_URL} alt="ITSPB" className="h-12 object-contain" />
+          <div className="flex items-center justify-between" style={{ height: "80px" }}>
+            <div className="bg-white rounded-xl px-4 py-2 flex-shrink-0">
+              <img src={LOGO_URL} alt="ITSPB" className="h-14 object-contain" />
             </div>
-            <div className="hidden md:flex items-center gap-6">
+            <div className="hidden md:flex items-center gap-7">
               {[["Услуги","services"],["Преимущества","advantages"],["Тарифы","plans"],["Кейсы","cases"],["Отзывы","reviews"],["FAQ","faq"]].map(([l,id]) => (
                 <button key={id} onClick={() => scrollTo(id)}
-                  className={`nav-link text-sm font-semibold transition-colors ${scrolled ? "text-[#0D1B2E] hover:text-[#1A7DC8]" : "text-white hover:text-[#F47820]"}`}>
+                  className="nav-link text-sm font-bold text-white hover:text-[#F47820] transition-colors">
                   {l}
                 </button>
               ))}
@@ -222,7 +221,7 @@ export default function Index() {
               </button>
             </div>
             <button className="md:hidden p-2" onClick={() => setMenuOpen(!menuOpen)}>
-              <Icon name={menuOpen ? "X" : "Menu"} size={24} className={scrolled ? "text-[#0D1B2E]" : "text-white"} />
+              <Icon name={menuOpen ? "X" : "Menu"} size={26} className="text-white" />
             </button>
           </div>
         </div>
@@ -238,7 +237,7 @@ export default function Index() {
       </nav>
 
       {/* ===== HERO ===== */}
-      <section className="hero-bg min-h-screen flex items-center pt-16 relative overflow-hidden">
+      <section className="hero-bg min-h-screen flex items-center relative overflow-hidden" style={{ paddingTop: "80px" }}>
         <div className="hero-grid" />
         <div className="orb orb-1" />
         <div className="orb orb-2" />
