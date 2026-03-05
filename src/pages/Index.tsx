@@ -203,17 +203,17 @@ export default function Index() {
       <div className="progress-bar" style={{ width: `${scrollProgress}%` }} />
 
       {/* NAV */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${scrolled ? "bg-white/96 backdrop-blur-xl shadow-lg border-b border-gray-100" : "bg-transparent"}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-white shadow-lg border-b border-gray-200" : "bg-[#0D1B2E]/90 backdrop-blur-xl border-b border-white/10"}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo — белый фон удалён, логотип на прозрачном */}
-            <div className={`flex items-center ${scrolled ? "" : "bg-white/10 backdrop-blur-sm rounded-xl px-3 py-1"}`}>
-              <img src={LOGO_URL} alt="ITSPB" className="h-10 object-contain" />
+          <div className="flex items-center justify-between h-18" style={{ height: "72px" }}>
+            {/* Logo — одинаковый везде, на белом фоне */}
+            <div className={`flex items-center rounded-xl px-3 py-1.5 ${scrolled ? "bg-gray-50" : "bg-white"}`}>
+              <img src={LOGO_URL} alt="ITSPB" className="h-12 object-contain" />
             </div>
             <div className="hidden md:flex items-center gap-6">
               {[["Услуги","services"],["Преимущества","advantages"],["Тарифы","plans"],["Кейсы","cases"],["Отзывы","reviews"],["FAQ","faq"]].map(([l,id]) => (
                 <button key={id} onClick={() => scrollTo(id)}
-                  className={`nav-link text-sm font-semibold transition-colors ${scrolled ? "text-[#0D1B2E] hover:text-[#1A7DC8]" : "text-white hover:text-white/80"}`}>
+                  className={`nav-link text-sm font-semibold transition-colors ${scrolled ? "text-[#0D1B2E] hover:text-[#1A7DC8]" : "text-white hover:text-[#F47820]"}`}>
                   {l}
                 </button>
               ))}
@@ -661,9 +661,8 @@ export default function Index() {
       <footer className="py-10 border-t border-white/10" style={{ background: "#0D1B2E" }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Logo on dark — clean white bg */}
-            <div className="bg-white rounded-xl px-4 py-2">
-              <img src={LOGO_URL} alt="ITSPB" className="h-9 object-contain" />
+            <div className="bg-white rounded-xl px-3 py-1.5">
+              <img src={LOGO_URL} alt="ITSPB" className="h-12 object-contain" />
             </div>
             <div className="flex flex-wrap justify-center gap-6">
               {[["Услуги","services"],["Тарифы","plans"],["Кейсы","cases"],["Контакты","contact"]].map(([l,id]) => (
